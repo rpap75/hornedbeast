@@ -1,12 +1,30 @@
 import React from "react";
+import Card from 'react-bootstrap/Card'
 
 class HornedBeast extends React.Component {
+
+  constructor(props) {
+    super(props);
+    this.state = {
+      clickCount: 0
+    };
+
+  }
+  handleClick = () => {
+    this.setState({
+      clickCount: this.state.clickCount + 1
+    });
+  }
   render() {
-    return (<div>
-      <h2>Horned Beast {this.props.title}</h2>
-      <img src={this.props.imageUrl} alt={this.props.description}></img>
-      <p>Animal Description:{this.props.description}</p>
-    </div>
+    return (
+      <>
+        <Card onClick={this.handleClick}>
+          <Card.Title>{this.props.title}</Card.Title>
+          <Card.Img fluid src={this.props.image_url} alt={this.props.description} />
+          <Card.Body>{this.props.description}</Card.Body>
+          <Card.Body>Num of Clicks: {this.state.clickCount}</Card.Body>
+        </Card>
+      </>
     )
   }
 }
