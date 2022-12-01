@@ -4,7 +4,6 @@ import Footer from './Footer';
 import Main from './Main';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import beastData from './beastData.json';
-import HornedBeast from './HornedBeast';
 import SelectedBeast from './SelectedBeast';
 import { Container } from 'react-bootstrap';
 
@@ -22,17 +21,12 @@ class App extends React.Component {
     this.setState({ selectedBeast: beast, showSelectedBeast: true })
   }
 
-  // showModal = () => {
-  //   this.setState({ showSelectedBeast: true });
-  // }
-
   hideModal = () => {
     this.setState({ showSelectedBeast: false });
   }
 
 
   render() {
-    // console.log(this.state.selectedBeast)
     return (
       <Container>
         <Header />
@@ -47,4 +41,5 @@ class App extends React.Component {
     );
   }
 }
+
 export default App;
