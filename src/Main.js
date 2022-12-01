@@ -5,14 +5,15 @@ import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 
+
 class Main extends React.Component {
   render() {
     return (
       <Container>
         <Row xs={2} sm={3} md={4} lg={5}>
-          {beastData.map(beastInfo => (
+          {this.props.beastArray.map(beastInfo => (
             <Col key={beastInfo._id}>
-              <HornedBeast title={beastInfo.title} image_url={beastInfo.image_url}
+              <HornedBeast title={beastInfo.title} selectingFunction={()=> this.props.selectingTheBeast(beastInfo)} image_url={beastInfo.image_url}
                 description={beastInfo.description} />
             </Col>))}
         </Row>

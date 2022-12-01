@@ -20,7 +20,7 @@ class HornedBeast extends React.Component {
       <>
         <Card onClick={this.handleClick}>
           <Card.Title>{this.props.title}</Card.Title>
-          <Card.Img fluid src={this.props.image_url} alt={this.props.description} />
+          <Card.Img  src={this.props.image_url} alt={this.props.description} onClick={this.props.selectingFunction}/>
           <Card.Body>{this.props.description}</Card.Body>
           <Card.Body>Num of Clicks: {this.state.clickCount}</Card.Body>
         </Card>
